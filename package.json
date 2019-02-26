@@ -1,29 +1,22 @@
 {
-  "name": "news_scraper",
+  "name": "News2",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nlserrano/News_Scraper.git"
-  },
-  "author": "Nathan Serrano",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nlserrano/News_Scraper/issues"
-  },
-  "homepage": "https://github.com/nlserrano/News_Scraper#readme",
   "dependencies": {
     "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
     "cheerio": "^1.0.0-rc.2",
-    "express": "^4.16.4",
-    "express-handlebars": "^3.0.1",
-    "handlebars": "^4.1.0",
-    "mongoose": "^5.4.14",
-    "morgan": "^1.9.1",
-    "request": "^2.88.0"
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^5.0.0-rc1",
+    "request": "^2.83.0"
   }
 }
