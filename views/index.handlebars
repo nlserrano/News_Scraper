@@ -14,11 +14,11 @@
 		}
 	</style>
 
-	<div class="card" style="margin: 20px 5px;">
-		<a class="card-link" href="{{this.link}}"><h4 class="card-header">{{this.title}}</h4></a>
+	<div class="card rounded-0" style="margin: 20px 5px;">
+		<a class="card-link text-center" href="{{this.link}}"><h4 class="card-header">{{this.title}}</h4></a>
 		<div class="card-body">
 			<p class="card-text">{{this.desc}}</p>
-			<p class="text-muted">{{this.author}}</p>
+			<p class="text-muted" style="font-style: italic">Author: {{this.author}}</p>
 		</div>
 		<div id="collapse-{{this._id}}" class="collapse" role="tabpanel" data-article="{{this._id}}" data-parent="#content">
 			<div></div>

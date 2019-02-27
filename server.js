@@ -102,6 +102,44 @@ app.delete("/comments/:id", (req, res) => {
 	});
 });
 
+// -------------
+// TO FIX: code for saving articles -----------
+
+// GET '/save/:id' Saves article for later viewing
+router.put('/save/:articleID', (req, res) => {
+    Article.findByIdAndUpdate(req.params.articleID, { $set: {saved: true} }, { new: true })
+        .then( article => {
+            res.send("Article updated");
+        })
+        .catch( err => {
+            console.error(err);
+            res.redirect('/');
+        })
+});
+
+// GET '/save' Show all saved articles
+router.get('/save', (req, res) => {
+    Article.find({ saved: true })
+        .then(dbArticles => {
+            res.render('savedArticles', { articles: dbArticles, title: "These are your saved articles" });
+        })
+        .catch( err => {
+            console.error(err);
+            res.redirect('/');
+        })
+});
+
+//DELETE article from saved area 
+router.delete('/delete/article/:removeArticleID', (req, res) => {
+    Article.findByIdAndRemove(req.params.removeArticleID)
+        .then( article => {
+            res.send("Article removed");
+        })
+        .catch(err => console.error(err));
+})
+
+// End -------------------
+
 app.listen(PORT, function() {
   console.log("Server listening on port " + PORT);
 });
